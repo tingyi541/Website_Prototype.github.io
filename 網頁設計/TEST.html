@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website_Prototype</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <style>
+html, body {
+    background-image: url("20230110_212943.JPG");
+    background-color: #c29b48; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    padding: 0;
+}
+
+.header {
+    background-color: #000000;
+    opacity: 0.8;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.column {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #dddddd;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    position: relative;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+.column img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    margin-bottom: 10px; 
+}
+
+img:hover{
+    opacity: 1;
+}
+
+.column h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.column p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.column:hover {
+    background-color: black;
+    color: white;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .column {
+        flex-basis: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>日本風景</h1>
+    </div>
+    <div class="dropdown">
+        <label for="column" style="color: rgb(137, 158, 255);">選定資訊卡：</label>
+        <select id="column-select" onchange="filterTable()">
+          <option value="all">全部</option>
+          <option value="column1">伏見稻荷大社＿千本鳥居</option>
+          <option value="column2">東京國際展示場</option>
+          <option value="column3">秋葉原</option>
+        </select>
+      </div>
+    <div class="container">
+        <div class="column column1">
+            <h2>伏見稻荷大社＿千本鳥居</h2>
+            <img src="https://www.unicorntw.com/wp-content/uploads/2014/12/167.jpg" alt="圖片一">
+            <p>伏見稻荷大社（日語：伏見稲荷大社／ふしみいなりたいしゃ Fushimi-Inari Taisha）是一座位於日本京都市伏見區內的神社，是遍及日本全國各地約三萬所的稻荷神社之總本社，也是近畿地方初詣參拜者最多的社寺（2010年日本國內第4位）。以境內所擁有的「千本鳥居」聞名。(來源：wikipedia)</p>
+            <a href="https://zh.wikipedia.org/zh-tw/伏見稻荷大社" target="_blank">來源網址</a>
+        </div>
+
+        <div class="column column2">
+            <h2>東京國際展示場</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/20030727_27_July_2003_Tokyo_International_Exhibition_Center_Big_Sight_Odaiba_Tokyo_Japan.jpg/1920px-20030727_27_July_2003_Tokyo_International_Exhibition_Center_Big_Sight_Odaiba_Tokyo_Japan.jpg" alt="圖片二">
+            <p>東京國際展示場（日語：東京国際展示場／とうきょうこくさいてんじじょう）是位於日本東京都江東區有明的會議展覽中心，1996年開館，以取代原位於東京都中央區晴海的東京國際貿易展覽館。通稱東京Big Sight（日語：東京ビッグサイト），這也是其經營機構的名稱。身為日本面積最大的展覽場地，東京許多重要的展覽會與貿易展均在此舉行。(來源：wikipedia)</p>
+            <a href="https://zh.wikipedia.org/zh-tw/東京國際展示場" target="_blank">來源網址</a>
+        </div>
+
+        <div class="column column3">
+            <h2>秋葉原</h2>
+            <img src="https://media.istockphoto.com/id/484915982/zh/%E7%85%A7%E7%89%87/akihabara-tokyo.jpg?s=612x612&w=0&k=20&c=2zwpB6nil34kG5yfuVMgde8kD4Y1OSq89vfsjSpovhw=" alt="圖片三">
+            <p>秋葉原（日語：秋葉原／あきはばら Akihabara）是位於日本東京的商圈，以秋葉原車站為中心，因聚集大量電器與3C賣場、電玩與動漫等電子娛樂商家、以及資訊產業企業而聞名。地理區劃上大致涵蓋東京都千代田區外神田、神田佐久間町、神田花岡町與台東區的秋葉原[1]。在動漫產業進駐前，區內的商店大都是以銷售家電、電腦與相關周邊衍生產品為主，因而與大阪市的日本橋、名古屋市的大須一起並稱為「日本三大電器街」。由於原始地名較長，當地人常將其簡稱為秋葉（日語：秋葉／アキバ Akiba）。(來源：wikipedia)</p>
+            <a href="https://zh.wikipedia.org/zh-tw/秋葉原" target="_blank">來源網址</a>
+        </div>
+    </div>
+      <style>
+        .dropdown {
+          position: absolute;
+          top: 40px;
+          right: 30px;
+        }
+
+        select {
+  appearance: none;
+  background-color: #b1b1b1;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+select:hover {
+  background-color: #f2f2f2;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #999;
+}
+
+        @media (max-width: 768px) {
+          .dropdown {
+           position: static;
+           margin-bottom: 10px;
+            }
+        }
+      </style>
+       <script>
+        function filterTable() {
+          var select = document.getElementById("column-select");
+          var value = select.value;
+          var columns = document.getElementsByClassName("column");
+
+          for (var i = 0; i < columns.length; i++) {
+            if (value == "all") {
+               columns[i].style.display = "flex";
+            } else if (columns[i].classList.contains(value)) {
+                columns[i].style.display = "flex";
+            } else {
+                columns[i].style.display = "none";
+            }
+          }
+        }
+       </script>
+</body>
+</html>
